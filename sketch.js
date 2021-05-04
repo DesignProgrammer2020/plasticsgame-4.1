@@ -45,7 +45,7 @@ function draw() {
   }
 }
 
-function drawRiver() {
+function drawCreek() {
   //blue background for sky
   background(0, 200, 245);
 
@@ -102,7 +102,7 @@ function title() {
   text('Collect the Trash', width / 2, height / 5);
 
   textSize(24);
-  text('to help keep the river clean', width / 2, height / 2);
+  text('to help keep the creek clean', width / 2, height / 2);
 
 }
 
@@ -112,7 +112,7 @@ function titleMouseClicked() {
 
 function level1() {
   // background(200, 200, 0);
-  drawRiver();
+  drawCreek();
 
   if (random(1) <= 0.01) {
     trash.push(new Trash());
@@ -126,6 +126,19 @@ function level1() {
     trash[i].display();
     trash[i].move();
   }
+
+    //using forEach loop
+    // trash.forEach(function(trash){
+    //   trash.display();
+    //   trash.move();
+    // })
+
+    // //using for of loop
+    // for(let trash of trash){
+    //   trash.display();
+    //   trash.move();
+    // }
+
 
     //check for collision; if there is one, slice that trash out; increase points
     //need to iterate backwards through array
