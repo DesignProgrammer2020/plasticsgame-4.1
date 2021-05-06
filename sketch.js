@@ -23,14 +23,14 @@ let trashAnimation = [];
 
 function preload(){
   // still images
-  playerImg = loadImage('trashNet/trashnet.png');
-  trashImg = loadImage('plasticImages/plastics.png');
-
-  //spritesheets
-  playerSS = loadImage('trashNet/trashnetSpritesheet.png');
-  playerJSON = loadJSON('trashNet/trashnetSpritesheet.json');
-  trashSS = loadImage('plasticImages/plasticsSpritesheet.png');
-  trashJSON = loadJSON('plasticImages/plasticsSpritesheet.json');
+  // playerImg = loadImage('trashNet/trashnet.png');
+  // trashImg = loadImage('plasticImages/plastics.png');
+  //
+  // //spritesheets
+  // playerSS = loadImage('trashNet/trashnetSpritesheet.png');
+  // playerJSON = loadJSON('trashNet/trashnetSpritesheet.json');
+  // trashSS = loadImage('plasticImages/plasticsSpritesheet.png');
+  // trashJSON = loadJSON('plasticImages/plasticsSpritesheet.json');
 }
 
 let yoff = 0.0; // 2nd dimension of perlin noise
@@ -198,9 +198,10 @@ function youWin() {
 
   textSize(36);
   fill(150, 120, 40);
-  text('Winner!', width / 2, height * 0.3);
+  text('You win!', width / 2, height * 0.3);
   textSize(24);
   text('Thank you for picking up litter.', width / 2, height * 0.4);
+  text('Now click for drawing fun.', width / 2, height * 0.5);
 }
 
 function youWinMouseClicked() {
