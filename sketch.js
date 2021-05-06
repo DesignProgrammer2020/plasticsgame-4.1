@@ -23,8 +23,8 @@ let coinAnimation = [];
 
 function preload(){
   //still images
-  playerImg = loadImage('');
-  coinImg = loadImage('');
+  playerImg = loadImage('trashnet.png');
+  coinImg = loadImage('plasticImages/plastics_[i].png');
 
   //spritesheets
   playerSS = loadImage();
