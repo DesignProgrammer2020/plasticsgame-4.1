@@ -6,7 +6,7 @@ class Trash {
   }
 
   display(){
-    fill(200, 0, 0);
+    fill(80);
     noStroke();
     square(this.x, this.y, this.r);
   }

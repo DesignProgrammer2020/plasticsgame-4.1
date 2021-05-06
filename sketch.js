@@ -11,26 +11,26 @@ let trash = [];
 let player;
 
 let playerImg;
-let coinImg;
+let trashImg;
 
 //spritesheets and animations
 let playerSS;
-let coinsSS;
+let trashSS;
 let playerJSON;
-let coinJSON;
+let trashJSON;
 let playerAnimation = [];
-let coinAnimation = [];
+let trashAnimation = [];
 
 function preload(){
-  //still images
-  playerImg = loadImage('trashnet.png');
-  coinImg = loadImage('plasticImages/plastics[i].png');
+  // still images
+  playerImg = loadImage('trashNet/trashnet.png');
+  trashImg = loadImage('plasticImages/waterbottle.png');
 
   //spritesheets
-  playerSS = loadImage('');
-  playerJSON = loadJSON('');
-  coinSS = loadImage('');
-  coinJSON = loadJSON('');
+  playerSS = loadImage('trashNet/trashnetSpritesheet.png');
+  playerJSON = loadJSON('trashNet/trashnetSpritesheet.json');
+  trashSS = loadImage('plasticImages/waterbottleSpritesheet.png');
+  trashJSON = loadJSON('plasticImages/waterbottleSpritesheet.json');
 }
 
 let yoff = 0.0; // 2nd dimension of perlin noise
