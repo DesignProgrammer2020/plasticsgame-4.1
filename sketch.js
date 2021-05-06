@@ -10,6 +10,29 @@ let h = 600;
 let trash = [];
 let player;
 
+let playerImg;
+let coinImg;
+
+//spritesheets and animations
+let playerSS;
+let coinsSS;
+let playerJSON;
+let coinJSON;
+let playerAnimation = [];
+let coinAnimation = [];
+
+function preload(){
+  //still images
+  playerImg = loadImage('');
+  coinImg = loadImage('');
+
+  //spritesheets
+  playerSS = loadImage();
+  playerJSON = loadJSON();
+  coinSS = loadImage();
+  coinJSON = loadJSON();
+}
+
 let yoff = 0.0; // 2nd dimension of perlin noise
 
 function setup() {
