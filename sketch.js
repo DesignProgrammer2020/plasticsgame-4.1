@@ -24,13 +24,13 @@ let trashAnimation = [];
 function preload(){
   // still images
   playerImg = loadImage('trashNet/trashnet.png');
-  trashImg = loadImage('plasticImages/waterbottle.png');
+  trashImg = loadImage('plasticImages/plastics.png');
 
   //spritesheets
   playerSS = loadImage('trashNet/trashnetSpritesheet.png');
   playerJSON = loadJSON('trashNet/trashnetSpritesheet.json');
-  trashSS = loadImage('plasticImages/waterbottleSpritesheet.png');
-  trashJSON = loadJSON('plasticImages/waterbottleSpritesheet.json');
+  trashSS = loadImage('plasticImages/plasticsSpritesheet.png');
+  trashJSON = loadJSON('plasticImages/plasticsSpritesheet.json');
 }
 
 let yoff = 0.0; // 2nd dimension of perlin noise
