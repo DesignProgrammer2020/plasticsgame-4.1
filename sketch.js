@@ -24,13 +24,13 @@ let coinAnimation = [];
 function preload(){
   //still images
   playerImg = loadImage('trashnet.png');
-  coinImg = loadImage('plasticImages/plastics_[i].png');
+  coinImg = loadImage('plasticImages/plastics[i].png');
 
   //spritesheets
-  playerSS = loadImage();
-  playerJSON = loadJSON();
-  coinSS = loadImage();
-  coinJSON = loadJSON();
+  playerSS = loadImage('');
+  playerJSON = loadJSON('');
+  coinSS = loadImage('');
+  coinJSON = loadJSON('');
 }
 
 let yoff = 0.0; // 2nd dimension of perlin noise
