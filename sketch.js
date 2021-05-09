@@ -23,12 +23,12 @@ let trashAnimation = [];
 
 function preload(){
   // still images
-  // playerImg = loadImage('trashNet/trashnet.png');
+  // playerImg = loadImage('/.png');
   // trashImg = loadImage('plasticImages/plastics.png');
   //
   // //spritesheets
-  // playerSS = loadImage('trashNet/trashnetSpritesheet.png');
-  // playerJSON = loadJSON('trashNet/trashnetSpritesheet.json');
+  playerSS = loadImage('assets/collector.png');
+  playerJSON = loadJSON('assets/collector.json');
   // trashSS = loadImage('plasticImages/plasticsSpritesheet.png');
   // trashJSON = loadJSON('plasticImages/plasticsSpritesheet.json');
 }
@@ -69,8 +69,59 @@ function draw() {
 }
 
 function drawCreek() {
-  //blue background for sky
-  background(0, 200, 245);
+  //yellow-green background for grass
+  background(100, 240, 0);
+
+  //add trees to the background
+
+  //let trees remain in same position for every game
+
+    //tree 1
+    push();
+    //brown triangle for trunk
+    noStroke();
+    fill(150, 100, 50);
+    triangle(50, 200, 35, 320, 65, 320);
+    //green circle for canopy
+    fill(0, 120, 0);
+    circle(50, 200, 100);
+    pop();
+
+    //tree 2
+    push();
+    translate(150, 0);
+    //brown triangle for trunk
+    noStroke();
+    fill(150, 100, 50);
+    triangle(50, 200, 35, 320, 65, 320);
+    //green circle for canopy
+    fill(0, 120, 0);
+    circle(50, 200, 100);
+    pop();
+
+    //tree 3
+    push();
+    translate(300, 0);
+    //brown triangle for trunk
+    noStroke();
+    fill(150, 100, 50);
+    triangle(50, 200, 35, 320, 65, 320);
+    //green circle for canopy
+    fill(0, 120, 0);
+    circle(50, 200, 100);
+    pop();
+
+    //tree 4
+    push();
+    translate(450, 0);
+    //brown triangle for trunk
+    noStroke();
+    fill(150, 100, 50);
+    triangle(50, 200, 35, 320, 65, 320);
+    //green circle for canopy
+    fill(0, 120, 0);
+    circle(50, 200, 100);
+    pop();
 
   //cyan waves for water
   fill(170, 295, 330);
@@ -87,7 +138,7 @@ function drawCreek() {
     // Calculate a y value according to noise, map
 
     //2D Noise
-    let y = map(noise(xoff, yoff), 0, 1, 200, 300);
+    let y = map(noise(xoff, yoff), 0, 1, 400, 450);
     vertex(x, y);
     // Increment x dimension for noise
     xoff += 0.1;
@@ -118,8 +169,8 @@ function keyPressed() {
 function title() {
 
   background(0, 150, 0);
-
   fill(0);
+
   textSize(36);
   textAlign(CENTER);
   text('Collect the Trash', width / 2, height / 5);
@@ -161,7 +212,6 @@ function level1() {
     //   trash.display();
     //   trash.move();
     // }
-
 
     //check for collision; if there is one, slice that trash out; increase points
     //need to iterate backwards through array
