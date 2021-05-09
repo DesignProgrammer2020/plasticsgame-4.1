@@ -8,8 +8,12 @@ class Player {
   }
 
   display(){
-    fill(0, 100, 200);
-    square(this.x, this.y, this.r);
+    let frameIndex=(int)(frameCount*0.05) % 4;
+    console.log(`frameIndex=${frameIndex}`);
+    image(playerAnimation[frameIndex], this.x, this.y, this.r, this.r);
+    // stroke(0);
+    //fill(0, 100, 200);
+    // square(this.x, this.y, this.r);
   }
 
   move() {

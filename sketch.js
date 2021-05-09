@@ -39,6 +39,17 @@ function setup() {
   cnv = createCanvas(w, h);
   textFont('monospace');
 
+  console.log(playerJSON.frames[0].frame);
+  let playerFrames = playerJSON.frames;
+
+  for (let i = 0; i < playerFrames.length; i++){
+    console.log(playerFrames[i]);
+    let pos = playerFrames[i].frame;
+    let img = playerSS.get(pos.x, pos.y, pos.w, pos.h);
+    playerAnimation.push(img);
+    console.log(playerAnimation);
+  }
+
   player = new Player();
   player.display();
 
