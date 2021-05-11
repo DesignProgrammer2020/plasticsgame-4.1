@@ -22,15 +22,11 @@ let playerAnimation = [];
 let trashAnimation = [];
 
 function preload(){
-  // still images
-  // playerImg = loadImage('/.png');
-  // trashImg = loadImage('plasticImages/plastics.png');
-  //
   // //spritesheets
   playerSS = loadImage('assets/collector.png');
   playerJSON = loadJSON('assets/collector.json');
-  // trashSS = loadImage('plasticImages/plasticsSpritesheet.png');
-  // trashJSON = loadJSON('plasticImages/plasticsSpritesheet.json');
+  trashSS = loadImage('assets/bottle.png');
+  trashJSON = loadJSON('assets/bottle.json');
 }
 
 let yoff = 0.0; // 2nd dimension of perlin noise
@@ -52,6 +48,17 @@ function setup() {
 
   player = new Player();
   player.display();
+
+
+  let trashFrames = trashJSON.frames;
+
+  for (let i = 0; i < trashFrames.length; i++){
+    console.log(trashFrames[i]);
+    let pos = trashFrames[i].frame;
+    let img = trashSS.get(pos.x, pos.y, pos.w, pos.h);
+    trashAnimation.push(img);
+    console.log(trashAnimation);
+  }
 
   trash.push(new Trash());
 }
