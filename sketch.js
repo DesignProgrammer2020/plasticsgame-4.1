@@ -21,7 +21,9 @@ let trashJSON;
 let playerAnimation = [];
 let trashAnimation = [];
 
-function preload(){
+// let frameRate(0.5);
+
+function preload() {
   // //spritesheets
   playerSS = loadImage('assets/collector.png');
   playerJSON = loadJSON('assets/collector.json');
@@ -38,7 +40,7 @@ function setup() {
   console.log(playerJSON.frames[0].frame);
   let playerFrames = playerJSON.frames;
 
-  for (let i = 0; i < playerFrames.length; i++){
+  for (let i = 0; i < playerFrames.length; i++) {
     console.log(playerFrames[i]);
     let pos = playerFrames[i].frame;
     let img = playerSS.get(pos.x, pos.y, pos.w, pos.h);
@@ -52,7 +54,7 @@ function setup() {
 
   let trashFrames = trashJSON.frames;
 
-  for (let i = 0; i < trashFrames.length; i++){
+  for (let i = 0; i < trashFrames.length; i++) {
     console.log(trashFrames[i]);
     let pos = trashFrames[i].frame;
     let img = trashSS.get(pos.x, pos.y, pos.w, pos.h);
@@ -94,79 +96,91 @@ function drawCreek() {
 
   //let trees remain in same position for every game
 
-    //tree 1
-    push();
-    //brown triangle for trunk
-    noStroke();
-    fill(150, 100, 50);
-    triangle(50, 200, 35, 320, 65, 320);
-    //green circle for canopy
-    fill(0, 120, 0);
-    circle(50, 200, 100);
-    pop();
+  //tree 1
+  push();
+  //brown triangle for trunk
+  noStroke();
+  fill(150, 100, 50);
+  triangle(50, 200, 35, 320, 65, 320);
+  //green circle for canopy
+  fill(0, 120, 0);
+  circle(50, 200, 100);
+  pop();
 
-    //tree 2
-    push();
-    translate(150, 0);
-    //brown triangle for trunk
-    noStroke();
-    fill(150, 100, 50);
-    triangle(50, 200, 35, 320, 65, 320);
-    //green circle for canopy
-    fill(0, 120, 0);
-    circle(50, 200, 100);
-    pop();
+  //tree 2
+  push();
+  translate(150, 0);
+  //brown triangle for trunk
+  noStroke();
+  fill(150, 100, 50);
+  triangle(50, 200, 35, 320, 65, 320);
+  //green circle for canopy
+  fill(0, 120, 0);
+  circle(50, 200, 100);
+  pop();
 
-    //tree 3
-    push();
-    translate(300, 0);
-    //brown triangle for trunk
-    noStroke();
-    fill(150, 100, 50);
-    triangle(50, 200, 35, 320, 65, 320);
-    //green circle for canopy
-    fill(0, 120, 0);
-    circle(50, 200, 100);
-    pop();
+  //tree 3
+  push();
+  translate(300, 0);
+  //brown triangle for trunk
+  noStroke();
+  fill(150, 100, 50);
+  triangle(50, 200, 35, 320, 65, 320);
+  //green circle for canopy
+  fill(0, 120, 0);
+  circle(50, 200, 100);
+  pop();
 
-    //tree 4
-    push();
-    translate(450, 0);
-    //brown triangle for trunk
-    noStroke();
-    fill(150, 100, 50);
-    triangle(50, 200, 35, 320, 65, 320);
-    //green circle for canopy
-    fill(0, 120, 0);
-    circle(50, 200, 100);
-    pop();
+  //tree 4
+  push();
+  translate(450, 0);
+  //brown triangle for trunk
+  noStroke();
+  fill(150, 100, 50);
+  triangle(50, 200, 35, 320, 65, 320);
+  //green circle for canopy
+  fill(0, 120, 0);
+  circle(50, 200, 100);
+  pop();
 
-  //cyan waves for water
-  fill(170, 295, 330);
+  //brown rectangle for mud
+  fill(206, 154, 113);
+  rectMode(CENTER);
+  rect(width * 0.5, height * 0.8, width, height * 0.4);
+
+  push();
+
+  //transparent cyan waves for water
+  fill(170, 295, 330, 80);
   noStroke();
 
-  //make the waves move
+  //make the waves move slowly
   //draw a polygon with wave points
+
+  // frameRate(0.5);
+
   beginShape();
 
   let xoff = 0;
 
   // Iterate over horizontal pixels
-  for (let x = 0; x <= width; x += 10) {
+  for (let x = 0; x <= width; x += 5) {
     // Calculate a y value according to noise, map
 
     //2D Noise
-    let y = map(noise(xoff, yoff), 0, 1, 400, 450);
+    let y = map(noise(xoff, yoff), 0, 1, height * 0.95, height);
     vertex(x, y);
     // Increment x dimension for noise
-    xoff += 0.1;
+    xoff += 0.03;
   }
 
   // increment y dimension for noise
-  yoff += 0.1;
+  yoff += 0.03;
   vertex(width, height);
   vertex(0, height);
   endShape(CLOSE);
+
+  pop();
 }
 
 function keyPressed() {
@@ -219,22 +233,22 @@ function level1() {
     trash[i].move();
   }
 
-    //using forEach loop
-    // trash.forEach(function(trash){
-    //   trash.display();
-    //   trash.move();
-    // })
+  //using forEach loop
+  // trash.forEach(function(trash){
+  //   trash.display();
+  //   trash.move();
+  // })
 
-    // //using for of loop
-    // for(let trash of trash){
-    //   trash.display();
-    //   trash.move();
-    // }
+  // //using for of loop
+  // for(let trash of trash){
+  //   trash.display();
+  //   trash.move();
+  // }
 
-    //check for collision; if there is one, slice that trash out; increase points
-    //need to iterate backwards through array
+  //check for collision; if there is one, slice that trash out; increase points
+  //need to iterate backwards through array
 
-    for (let i = trash.length-1; i>=0; i--){
+  for (let i = trash.length - 1; i >= 0; i--) {
 
     if (dist(player.x, player.y, trash[i].x, trash[i].y) <= (player.r + trash[i].r) / 2) {
       points++;
