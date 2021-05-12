@@ -233,18 +233,6 @@ function level1() {
     trash[i].move();
   }
 
-  //using forEach loop
-  // trash.forEach(function(trash){
-  //   trash.display();
-  //   trash.move();
-  // })
-
-  // //using for of loop
-  // for(let trash of trash){
-  //   trash.display();
-  //   trash.move();
-  // }
-
   //check for collision; if there is one, slice that trash out; increase points
   //need to iterate backwards through array
 
@@ -283,7 +271,6 @@ function youWin() {
   text('You win!', width / 2, height * 0.3);
   textSize(24);
   text('Thank you for picking up litter.', width / 2, height * 0.4);
-  text('Now click for drawing fun.', width / 2, height * 0.5);
 }
 
 function youWinMouseClicked() {
